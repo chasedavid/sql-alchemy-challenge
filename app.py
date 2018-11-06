@@ -44,7 +44,7 @@ def prec(date):
     return dictionary (jsonified) for provided date
     """
     result = {date: session.query(Measurement.date == date).all()}
-    return(jsonfiy(result))
+    return(jsonify(result))
 
 @app.route('/stations')
 def stations():
@@ -54,7 +54,7 @@ def stations():
     result = session.query(Station.station, Station.name,\
                             Station.latitude, Station.longitude,\
                             Station.elevation).all()
-    return(jsonfiy(result))
+    return(jsonify(result))
 
 @app.route('/tobs')
 def tobs():
